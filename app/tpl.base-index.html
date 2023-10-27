@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-br" id="html">
+    <head>
+        <!-- Seo -->
+        {seo}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=1">
+        <!-- Fav Ico -->
+        {favicon}
+        <!-- Fav Ico -->
+        <!-- Variaveis -->
+        <script>
+        var path = '{path}';
+        var index = '{index}';
+        var token = '{token}';
+        var ajax = '{ajax}';
+        var EMPRESA = '{config->EMPRESA}';
+        </script>
+        <style>
+        :root {
+            --telicone: url("{config->site_url}/imagem/assets/telefone-icon.png");
+        }
+        </style>
+
+        <link rel="canonical" href="{link_canonical}" />
+
+        <!-- Variaveis -->
+        <!-- BEGIN BLOCK_BOOTSTRAP_LESS -->
+        <link rel="stylesheet/less" href="{path}{tema}css/style.less?d={ncache}">
+        <script src="{path}css/bootstrap-3.3.7/docs/assets/js/vendor/less.min.js"></script>
+        <!-- END BLOCK_BOOTSTRAP_LESS -->
+        <!-- BEGIN BLOCK_BOOTSTRAP_MIN -->
+        <link rel="stylesheet" href="{path}{tema}css/site.min.css?={ncache}">
+        <!-- END BLOCK_BOOTSTRAP_MIN -->
+        <script type="text/javascript" src="{path}{tema}js/jquery-1.11.1.min.js"></script>
+        <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+        <!-- BEGIN BLOCK_GOOGLE_ANALYTCS -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={codigo_analytcs}"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{codigo_analytcs}');
+        </script>
+        <!-- END BLOCK_GOOGLE_ANALYTCS -->
+
+        {recaptcha}
+
+    </head>
+    <body id="body">
+
+        <!-- BEGIN BLOCK_GOOGLE_TAG -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id={codigo_tag}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- END BLOCK_GOOGLE_TAG -->
+        <div id="html">
+            <header>
+                <div class="head-mobile visible-sm visible-xs">
+                    <div class="conteudo-top-mobile">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <a href="{index}" title="{config->EMPRESA}">
+                                        <img src="{path}imagem/logo/logo.png?v=123" alt="{config->EMPRESA}" class="img-responsive">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conteudo-mobile">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding_0">
+                                    <ul class="menu-mobile">
+                                        <li>
+                                            <a href="#" title="Menu" class="mob_menu">
+                                                <img src="{path}app/img/assets/icon-menu.png" alt="menu">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="tel:{config->TELEFONE}" target="_blank" title="Telefone">
+                                                <img src="{path}app/img/assets/icon-phone.png" alt="telefone">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <img src="{path}app/img/assets/icon-search.png" alt="buscar" id="_buscar_mobile">
+                                        </li>
+                                        <li>
+                                            <a href="{index}minhaconta/" title="minha conta">
+                                                <img src="{path}app/img/assets/icon-user-alt.png" alt="minha conta">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{index}orcamento" title="Carrinho">{carrinho->texto_itens}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" d-buscar-mobile"> 
+                            <form name="busca" id="formBuscaMobile" action="{index}buscar" method="GET" class="input_busca_form" >
+                                <div class="form-group">
+                                    <input type="text" name="busca" id="input_busca_form_mobi" class="input_busca_form form-control" onkeyup="javascript: smartSearch(this);" autocomplete="off" placeholder="Encontre aqui seu produto ...">
+                                    <i class="fa fa-search" aria-hidden="true" onclick="document.getElementById('formBuscaMobile').submit();"></i>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="topo-header hidden-sm hidden-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-5 col-sm-4 col-xs-4 padding_0 text-left topo-header-contato">
+                                    <table class="text-right">
+                                        <!-- BEGIN BLOCK_TELEFONE_HEADER -->
+                                        <tr>
+                                            <td>
+                                                <div class="icone-topo-tel"></div>
+                                            </td>
+                                            <td style="vertical-align:middle;" class="text-left">
+                                                <span class="span-tel">
+                                                    {config->TELEFONE}&nbsp;&nbsp;|&nbsp;&nbsp;{config->TELEFONE2}&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                </span>
+                                                <a href="mailto:{config->EMAIL_CONTATO}" class="span-tel" title="E-mail {config-EMAIL_CONTATO}" rel="noreferrer nofollow">{config->EMAIL_CONTATO}</a>
+                                            </td>
+                                        </tr>
+                                        <!-- END BLOCK_TELEFONE_HEADER -->
+                                    </table>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-4 div-menu">
+                                    <nav style="text-align:right;">
+                                        <a href="{index}" class="{home_selected}" title="Home">Home |</a>
+                                        <a href="{index}sobre" class="{sobre_selected}" title="Sobre">Sobre |</a>
+                                        <a href="{index}blog" class="{blog_selected}" title="Blog">Blog  |</a>
+                                        <a href="{index}contato" title="Contato" class="{contato_selected}">Contato</a>
+                                    </nav>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 padding_0 text-right dropdown show">
+                                    <a class="dropdown_login">
+                                        Minha Conta
+                                        <i class="fa fa-angle-down" aria-hidden="true" style="color:#FFF"></i>
+                                    </a>
+                                    <div class="dropdown-menu menu-drop-login" xid="drop_login" aria-labelledby="dropdownMenuLink">
+                                        {login_header}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header hidden-sm hidden-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 padding_0">
+                                <!-- BEGIN BLOCK_TAG_H1 -->
+                                <h1 class="col-md-3 col-xs-3 padding_0">
+                                    <a href="{index}" title="{config->EMPRESA}" class="logo-header">
+                                        <span class="hidden">{config->H1_PERSONALIZADO}</span>
+                                        <img src="{path}imagem/logo/logo.png?v={nocache}" alt="{config->EMPRESA}" class="img-responsive" style="width:100%;">
+                                    </a>
+                                </h1>
+                                <!-- END BLOCK_TAG_H1 -->
+                                <!-- BEGIN BLOCK_TAG_DIV -->
+                                <div class="col-md-3 col-xs-3 padding_0">
+                                    <a href="{index}" title="{config->EMPRESA}" class="logo-header">
+                                        <img src="{path}imagem/logo/logo.png?v={nocache}" alt="{config->EMPRESA}" class="img-responsive" style="width:100%;">
+                                    </a>
+                                </div>
+                                <!-- END BLOCK_TAG_DIV -->
+                                <div class="col-md-9 col-xs-9 busca-carrinho">
+                                    <div class="col-md-7 col-xs-4" style="padding-top: 2%;">
+                                        <div class="d-busca-header form-group">
+                                            <form name="busca" id="formBusca" action="{index}buscar" method="GET" class="" style="height:40px;">
+                                                <input type="text" name="busca" id="input_busca_form" class="input_busca_form" onkeyup="javascript: smartSearch(this);" autocomplete="off" placeholder="Encontre aqui seu produto ...">
+                                                <div class="icon-busca">
+                                                    <div class="icone-from-busca" onclick="document.getElementById('formBusca').submit();"></div>
+                                                </div>
+                                                <div class="search_result" id="search_result" style="display:none;"></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-xs-4" style="padding-top: 2%;">
+                                        <ul class="ul-pedido-header">
+                                            <li>
+                                                <a href="{index}orcamento" title="Carrinho">{carrinho->texto_itens}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            {menu_categorias}
+            <section>
+                {mesagem_erro_sucesso}
+            {miolo}
+            </section>
+
+            <section class="section-cat-destaque-footer hidden-sm hidden-xs" id="categoria_destaque_footer" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                            <nav>
+                                 <!-- BEGIN BLOCK_CATEGORIAS_DESTAQUES -->
+                                    <a href="{catdetaque_link}" title="{categoria->nome}" class="link-cat-destaque">
+                                        <img src="{catdestaque_icone}" alt="{catdestaque_nome}" class="img-responsive">
+                                        <br/>
+                                        <div class="d-text-cat-destaque">
+                                            <span>{catdestaque_nome}</span>
+                                        </div>
+                                    </a>
+                                <!-- END BLOCK_CATEGORIAS_DESTAQUES -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer" id="footer-site" style="padding-bottom:0;">
+                <div class="_daddos">
+                    <div>
+                        <!-- LOGO ENDERECO -->
+                        <div class="logo-endereco">
+                            <div class="logo-rodape">
+                                <a href="{index}" title="{config->EMPRESA}">
+                                    <picture>
+                                        <source media="(max-width:991px)" srcset="{path}imagem/logo/logo.png?v={nocache}">
+                                        <img src="{path}imagem/logo/logo_footer.png?a=123" alt="{config->EMPRESA}" class="img-responsive">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="div-end">
+                                <span class="title">Atendimento</span>
+                                <br>
+                                <span class="tel">
+                                    <!-- BEGIN BLOCK_TELEFONE_1_FOOTER -->
+                                    {config->TELEFONE}
+                                    <!-- END BLOCK_TELEFONE_1_FOOTER -->
+                                    <!-- BEGIN BLOCK_TELEFONE_2_FOOTER -->
+                                    | {config->TELEFONE2}
+                                    <!-- END BLOCK_TELEFONE_2_FOOTER -->
+                                </span>
+                                <br>
+                                <a class="end" href="mailto:{config->EMAIL_CONTATO}" rel="noreferrer nofollow">{config->EMAIL_CONTATO}</a>
+                                <br>
+                               <!-- BEGIN BLOCK_END_FOOTER -->
+                                    <span class="end">
+                                        <!-- BEGIN BLOCK_END_LOGRADOURO -->
+                                            {config->LOGRADOURO}, 
+                                        <!-- END BLOCK_END_LOGRADOURO -->
+                                        <!-- BEGIN BLOCK_END_NUMERO -->
+                                            {config->NUMERO} -
+                                        <!-- END BLOCK_END_NUMERO -->
+                                        <!-- BEGIN BLOCK_END_BAIRRO -->
+                                            {config->BAIRRO}<br>
+                                        <!-- END BLOCK_END_BAIRRO -->
+                                    </span>
+                                    
+                                    <span class="end">
+                                        <!-- BEGIN BLOCK_END_CIDADE -->
+                                            {config->CIDADE} -
+                                        <!-- END BLOCK_END_CIDADE -->
+                                        <!-- BEGIN BLOCK_END_ESTADO -->
+                                            {config->ESTADO}  <br>
+                                        <!-- END BLOCK_END_ESTADO -->
+                                    </span>
+                                
+                                    <!-- BEGIN BLOCK_END_CEP -->
+                                        <span class="end">CEP: {config->CEP}</span>
+                                    <!-- END BLOCK_END_CEP -->
+                                <!-- END BLOCK_END_FOOTER -->
+                                <!-- BEGIN BLOCK_SOCIAIS -->
+                                <div class="div_redes">
+                                    <ul class="nav-redes">
+                                        <!-- BEGIN BLOCK_INSTAGRAM -->
+                                        <li>
+                                            <a href="{config->INSTAGRAM}" target="_blank" title="Instagram {config->empresa}">
+                                                <picture>
+                                                    <img src="{iconinsta}" alt="Instagram">
+                                                </picture>
+                                            </a>
+                                        </li>
+                                        <!-- END BLOCK_INSTAGRAM -->
+                                        <!-- BEGIN BLOCK_FACEBOOK -->
+                                        <li>
+                                            <a href="{config->FACEBOOK}"  target="_blank" title="Facebook {config->empresa}">
+                                                <picture>
+                                                    <img src="{iconface}" alt="Facebook">
+                                                </picture>
+                                            </a>
+                                        </li>
+                                        <!-- END BLOCK_FACEBOOK -->
+                                        <!-- BEGIN BLOCK_YOUTUBE -->
+                                        <li>
+                                            <a href="{config->YOUTUBE}"  target="_blank" title="YouTube {config->empresa}">
+                                                <picture>
+                                                    <img src="{iconyoutube}" alt="Youtube">
+                                                </picture>
+                                            </a>
+                                        </li>
+                                        <!-- END BLOCK_YOUTUBE -->
+                                        <!-- BEGIN BLOCK_TIKTOK -->
+                                        <li>
+                                            <a href="{config->TIKTOK}"  target="_blank" title="Tik Tok {config->empresa}">
+                                                <picture>
+                                                    <img src="{icontiktok}" alt="Tiktok">
+                                                </picture>
+                                            </a>
+                                        </li>
+                                        <!-- END BLOCK_TIKTOK -->
+                                        <!-- BEGIN BLOCK_LINKEDIN -->
+                                        <li>
+                                            <a href="{config->LINKEDIN}"  target="_blank" title="Linkedin {config->empresa}">
+                                                <picture>
+                                                    <img src="{iconlinkedin}" alt="Linkedin">
+                                                </picture>
+                                            </a>
+                                        </li>
+                                        <!-- END BLOCK_LINKEDIN -->
+                                        <!-- BEGIN BLOCK_TWITTER -->
+                                        <li>
+                                            <a href="{config->TWITTER}"  target="_blank" title="TWITTER {config->empresa}">
+                                                <picture>
+                                                    <img src="{icontwitter}" alt="Twitter">
+                                                </picture>
+                                            </a>
+                                        </li>
+                                        <!-- END BLOCK_TWITTER -->
+                                        <!-- BEGIN BLOCK_PINTEREST -->
+                                        <li>
+                                            <a href="{config->PINTEREST}"  target="_blank" title="Pinterest {config->empresa}">
+                                                <picture>
+                                                    <img src="{iconpinterest}" alt="Twitter">
+                                                </picture>
+                                            </a>
+                                        </li>
+                                        <!-- END BLOCK_PINTEREST -->
+                                    </ul>
+                                </div>
+                                <!-- END BLOCK_SOCIAIS -->
+                            </div>
+                            <div class="visible-sm visible-xs col-md-12 col-sm-12 col-xs-12 text-center">
+                                <div class="selossl-footer">
+                                    <img src="{path}img/assets/ssl.png" alt="Certificado SSL">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-footer menu-footer-categoria">
+                            <span class="_title">Categorias</span>
+                            <ul>
+                                <!-- BEGIN BLOCK_CATEGORIAS_FOOTER -->
+                                <li>
+                                    <a href="{categoria->link}" title="{categoria->nome}">{categoria->nome}</a>
+                                </li>
+                                <!-- END BLOCK_CATEGORIAS_FOOTER -->
+                            </ul>
+                        </div>
+                        <div class="menu-footer menu_footer">
+                            <span class="_title">Menu</span>
+                            <ul>
+                                <li>
+                                    <a href="{index}contato" title="Contato" class="{contato_selected}">Contato</a>
+                                </li>
+                                <li>
+                                    <a href="{index}sobre" title="Empresa" class="{sobre_selected}">Sobre</a>
+                                </li>
+                                <li>
+                                    <a href="{index}minhaconta" title="Minha Conta" class="{minhaconta_selected}">Minha Conta</a>
+                                </li>
+                                <li>
+                                    <a href="{index}minhaconta#favoritos" title="Favoritos" class="{minhaconta_selected}">Favoritos</a>
+                                </li>
+                                <li>
+                                    <a href="{index}blog" title="Blog" class="{blog_selected}">Blog</a>
+                                </li>
+                                {menupaginainstitucional}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 padding_0">
+                                <div class="col-md-5 col-sm-6 col-xs-6 padding_0">
+                                    <span>Todos os direitos reservados {config->COPYRIGHT}</span>
+                                </div>
+                                <div class="col-md-7 col-sm-6 col-xs-6">
+                                    <div class="col-md-6 col-sm-12 col-xs-12 text-left">
+                                        <span>
+                                        Desenvolvido por
+                                        <a href="https://www.ajung.com.br" rel="external" target="_blank">A. Jung</a>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+                                        <div class="selossl-footer">
+                                            <img src="{path}img/assets/ssl.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+                                        <div class="voltar_topo">
+                                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- MENSAGEM COOKIES NA INDEX  -->
+            <!-- BEGIN BLOCK_USER_POLICY -->
+            <div class="cookie-div">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 cookie-div-text">
+                            <span class="cookie-text">
+                                {config->EMPRESA} e os cookies: usamos cookies para personalizar anúncios e melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa
+                                <a href="{index}institucional/Politica-de-Privacidade" style="text-decoration: underline;">Política de Privacidade</a>
+                            </span>
+                        </div>
+                        <div class="col-md-2 cookie-div-button">
+                            <div class="cookie-button btn-default btn" id="botao-cookie" value="1">
+                                Entendi
+                            </d>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END BLOCK_USER_POLICY -->
+        </div>
+        <section>
+            <div class="modal fade" id="modalMensagem" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"></span>
+                            </button>
+                            <h4 class="modal-title">{modal_titulo}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p class="lead">
+                                {modal_mensagem}
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-block btn-primary" onclick="$('#modalMensagem').modal('hide');">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade esqueciSenha " id="esqueciSenha" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                        <h4 class="modal-title">ESQUECEU SUA SENHA?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert" id="senhamsg" style="display: none"></div>
+                        <form action="{index}senha" method="post" class="form-senha js-input">
+                            <input type="hidden" name="enviar" value="1">
+                            <div class="form-group">
+                                <label for="email" class="control-label">Digite seu e-mail de cadastro:</label>
+                                <input type="text" name="email" class="form-control" value="">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <span class="btn btn-esqueci btn-block btn-primary " onclick="$('.form-senha').submit();">ENVIAR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BEGIN BLOCK_WHATS_FOOTER -->
+        <!-- <div class="whatsapp" style="display: inline-block;position: fixed;bottom: 108px;right: 1%;z-index:9;">
+            <a href="https://wa.me/{telefone_tratado}" target="_blank">
+                <img src="/img/assets/whastapp.png" alt="Whastapp ">
+            </a>
+        </div> -->
+        <!-- END BLOCK_WHATS_FOOTER -->
+
+        <!-- BEGIN BLOCK_SOCIAIS_FLUTUANTE -->
+        <div class="redes-sociais-flutuantes hidden-sm hidden-xs">
+              <ul class="nav-redes">
+                <!-- BEGIN BLOCK_INSTAGRAM_FLUTUANTE -->
+                <li>
+                    <a href="{config->INSTAGRAM}" target="_blank" title="Instagram {config->empresa}">
+                        <picture>
+                            <source media="(max-width:991px)" srcset="{path}{tema}img/assets/icon_instagram_color.png">
+                            <img src="{iconinsta}" alt="Instagram">
+                        </picture>
+                    </a>
+                </li>
+                <!-- END BLOCK_INSTAGRAM_FLUTUANTE -->
+                <!-- BEGIN BLOCK_FACEBOOK_FLUTUANTE -->
+                <li>
+                    <a href="{config->FACEBOOK}"  target="_blank" title="Facebook {config->empresa}">
+                        <picture>
+                            <source media="(max-width:991px)" srcset="{path}{tema}img/assets/icon_facebook_color.png">
+                            <img src="{iconface}" alt="Facebook">
+                        </picture>
+                    </a>
+                </li>
+                <!-- END BLOCK_FACEBOOK_FLUTUANTE -->
+                <!-- BEGIN BLOCK_YOUTUBE_FLUTUANTE -->
+                <li>
+                    <a href="{config->YOUTUBE}"  target="_blank" title="YouTube {config->empresa}">
+                        <picture>
+                            <source media="(max-width:991px)" srcset="{path}{tema}img/assets/icon_youtube_color.png">
+                            <img src="{iconyoutube}" alt="Youtube">
+                        </picture>
+                    </a>
+                </li>
+                <!-- END BLOCK_YOUTUBE_FLUTUANTE -->
+                <!-- BEGIN BLOCK_TIKTOK_FLUTUANTE -->
+                <li>
+                    <a href="{config->TIKTOK}"  target="_blank" title="Tik Tok {config->empresa}">
+                        <picture>
+                            <source media="(max-width:991px)" srcset="{path}{tema}img/assets/icon_tiktok_color.png">
+                            <img src="{icontiktok}" alt="Tiktok">
+                        </picture>
+                    </a>
+                </li>
+                <!-- END BLOCK_TIKTOK_FLUTUANTE -->
+                <!-- BEGIN BLOCK_LINKEDIN_FLUTUANTE -->
+                <li>
+                    <a href="{config->LINKEDIN}"  target="_blank" title="Linkedin {config->empresa}">
+                        <picture>
+                            <source media="(max-width:991px)" srcset="{path}{tema}img/assets/icon_linkedin_color.png">
+                            <img src="{iconlinkedin}" alt="Linkedin">
+                        </picture>
+                    </a>
+                </li>
+                <!-- END BLOCK_LINKEDIN_FLUTUANTE -->
+                <!-- BEGIN BLOCK_TWITTER_FLUTUANTE -->
+                <li>
+                    <a href="{config->TWITTER}"  target="_blank" title="TWITTER {config->empresa}">
+                        <picture>
+                            <source media="(max-width:991px)" srcset="{path}{tema}img/assets/icon_twitter_color.png">
+                            <img src="{icontwitter}" alt="Twitter">
+                        </picture>
+                    </a>
+                </li>
+                <!-- END BLOCK_TWITTER_FLUTUANTE -->
+                <!-- BEGIN BLOCK_PINTEREST_FLUTUANTE -->
+                <li>
+                    <a href="{config->PINTEREST}"  target="_blank" title="Pinterest {config->empresa}">
+                        <picture>
+                            <source media="(max-width:991px)" srcset="{path}{tema}img/assets/icon_pinterest_color.png">
+                            <img src="{iconpinterest}" alt="Twitter">
+                        </picture>
+                    </a>
+                </li>
+                <!-- END BLOCK_PINTEREST_FLUTUANTE -->
+            </ul>
+        </div>
+        <!-- END BLOCK_SOCIAIS_FLUTUANTE -->
+
+
+        <link href="{path}{tema}css/swiper.min.css" media="all" rel="stylesheet">
+        <link rel="stylesheet" href="{path}js/fancybox/jquery.fancybox.css">
+        <!-- BEGIN BLOCK_INCLUDE_CSS -->
+        <link rel="stylesheet" type="text/css" href="{includecss}?x={ncache}">
+        <!-- END BLOCK_INCLUDE_CSS -->
+        <link href="{path}{tema}css/swiper.min.css" media="all" rel="stylesheet">
+        <link rel="stylesheet" href="{path}{tema}js/fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="{path}{tema}css/owl.carousel.css">
+        <link rel="stylesheet" href="{path}{tema}css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="{path}{tema}css/jquery.nstSlider.min.css">
+        <link rel="stylesheet" href="{path}{tema}css/jquery.nice-number.css">
+        <link href="{path}{tema}css/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="{path}{tema}js/swiper.min.js"></script>
+        <script type="text/javascript" src="{path}{tema}js/whatsapp-button.min.js"></script>
+        <!-- Boostrap Js -->
+        <script type="text/javascript" src="{path}{tema}js/bootstrap.min.js"></script>
+        <!-- Boostrap Js -->
+        <script type="text/javascript" src="{path}{tema}js/lib/jquery.lazyload.js"></script>
+        <script type="text/javascript" src="{path}{tema}js/jquery.form.js"></script>
+        <script type="text/javascript" src="{path}{tema}js/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="{path}{tema}js/fancybox/jquery.fancybox.js"></script>
+        <script type="text/javascript" src="{path}{tema}js/formata_validadcoes.js"></script>
+        <script type="text/javascript" src="{path}{tema}js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="{path}{tema}js/jquery.nstSlider.min.js"></script>
+        <!-- <script type="text/javascript" src="{path}{tema}bower_components/sweetalert2/dist/sweetalert2.all.min.js"></script> -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="text/javascript" src="{path}{tema}js/geral.js?x={ncache}"></script>
+        <script type="text/javascript" src="{path}{tema}js/site.app.js?x={ncache}"></script>
+        <!-- BEGIN BLOCK_JS_DEV -->
+        <!-- END BLOCK_JS_DEV -->
+        <!-- BEGIN BLOCK_JS_MIN -->
+        <script type="text/javascript" src="{path}{tema}js/site.min.js?v=1"></script>
+        <script type="text/javascript" src="{path}{tema}js/geral.js?x={ncache}"></script>
+        <!-- END BLOCK_JS_MIN -->
+        <!-- BEGIN BLOCK_INCLUDE_JS -->
+        <script type="text/javascript" src="{includejs}?x=2"></script>
+        <!-- END BLOCK_INCLUDE_JS -->
+        <script type="text/javascript" src="{path}{tema}js/jquery.nice-number.js"></script>
+        <!-- Scripts -->
+        <!-- BEGIN BLOCK_MODAL -->
+        <script>
+            $(document).ready(function () {   
+                $('#modalMensagem').modal('show');
+            });
+        </script>
+        <!-- END BLOCK_MODAL -->
+        {script}
+        <!-- BEGIN BLOCK_CLIENTE_LOGADO -->
+        <!--{cliente}-->
+        <!-- END BLOCK_CLIENTE_LOGADO -->
+    </body>
+</html>

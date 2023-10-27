@@ -1,0 +1,111 @@
+<header class="header-menu" id="header-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 padding_0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-sm visible-xs text-center d-logo-mobile">
+                        <a href="{index}" title="{config->EMPRESA}">
+                            <img src="{path}imagem/logo/logo.png" alt="{config->empresa}">
+                        </a>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-sm visible-xs d-minha-conta-mobile">
+                        <div class="col-md-10 col-sm-10 col-xs-10 padding_0">
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                            <a href="#" class="fecha_mobile"><img src="{path}{tema}img/assets/icon-window-close.png" /></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 conteudo-menu">
+                        <ul>
+                            <li class="divi-menu">
+                                <div class="show-all">
+                                    <i class="fa fa-bars" aria-hidden="true"></i><span>PRODUTOS</span>
+                                </div>
+                                <a class="visible-sm visible-xs" id="_d-menu"><b>PRODUTOS</b> <i class="fa fa-angle-down icon_angle_down fa-menu-mobi" aria-hidden="true"></i></a>
+
+                                <div class="menu-prod">
+
+                                    <!-- BEGIN BLOCK_COLUNA_CATEGORIA -->
+                                    <ul class="">
+            
+                                        <!-- BEGIN BLOCK_CATEGORIAS_0 -->
+                                        <li class="{linkfilho}" data-id="{categoria0->id}"><a href="{categoria0->link}" class="link-categoria" data-id="{categoria0->id}" title="{categoria0->nome}">{categoria0->nome} <i class="fa fa-angle-down icon_angle_{categoria0->id} fa-categoria" aria-hidden="true"></i></a>
+                                                                            
+                                            <!-- BEGIN BLOCK_CATEGORIA_SUB -->
+                                            <div class="sub-menu sub-cat sub_{categoria0->id}" id="{categoria0->id}" data-id="{categoria0->id}">
+                                                <div class="menu-sub">
+                                                    <div class="d1-menu-sub ">
+                                                        <div class=" col-xs-4 hidden-sm hidden-xs"></div>
+                                                        
+                                                        <!-- BEGIN BLOCK_CATEGORIAS_1 -->
+                                                        <div class="d2-menu-sub  col-xs-4">
+                                                            <div class="menu-s ">
+                                                                <ul>
+                                                                    <li class="{linkfilho}"><a href="{categoria1->link}" class="link-subcategoria" data-id="{categoria1->id}" title="{categoria1->nome}"><span>{categoria1->nome} </span><i class="fa fa-angle-down icon_angle_sub_{categoria1->id} fa-categoria" aria-hidden="true"></i></a>
+                                                                        <ul class="ul-sub ul-sub_{categoria1->id}" id="{categoria1->id}" data-id="{categoria1->id}">
+                                                                        <!-- BEGIN BLOCK_CATEGORIAS_2 -->
+                                                                            <li style="display:block;" class="sublink_{categoria1->id}"><a href="{categoria2->link}" title="{categoria2->nome}">{categoria2->nome}</a></li>
+                                                                        <!-- END BLOCK_CATEGORIAS_2 -->                                           
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>                                  
+                                                            </div>
+                                                        </div>
+                                                        <!-- END BLOCK_CATEGORIAS_1 -->
+                                                        
+                                                    </div>
+                
+                                                    <div class="produto-submenu hidden-sm hidden-xs" style="padding-bottom: 77px;"> 
+                                                        <div class="produto-menu">{produto_destaque}</div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <!-- END BLOCK_CATEGORIA_SUB -->                               
+            
+                                        </li>
+                                        <!-- END BLOCK_CATEGORIAS_0 -->
+                                    </ul>
+
+                                    <!-- END BLOCK_COLUNA_CATEGORIA -->
+
+                                </div>
+
+                            </li>
+                            <!-- <li class="categorias_selecionadas">
+                                <a href="#" title='Datas Comemorátivas'>DATAS COMEMORATIVAS</a>
+                            </li> -->
+                            <li class="categorias_selecionadas">
+                                <a href="{index}lancamentos" title='Lançamentos'>LANÇAMENTOS</a>
+                            </li>
+                            <li class="categorias_selecionadas">
+                                <a href="{index}promocoes" title='Promoções'>PROMOÇÕES</a>
+                            </li>
+                            <li class="categorias_selecionadas">
+                                <a href="{index}catalogo" title='Catálogos'><i class="fa fa-book" aria-hidden="true"></i> CATÁLOGOS</a>
+                            </li>
+
+                            <!-- BEGIN BLOCK_CATEGORIAS_SELECIONADAS -->
+                            <li class="{hassub} categorias_selecionadas" style="display: none;">
+                                <a href="{categoria->link}" title="{categoria->nome}">{categoria->nome}</a>
+                                <!-- BEGIN BLOCK_CATEGORIAS_SELECIONADAS_SUBS -->
+                                <ul class="_subcat"> 
+                                    <!-- BEGIN BLOCK_SUBCATEGORIA_SELECIONADA -->
+                                    <li><a href="{subcat->link}" title="{subcat->nome}">{subcat->nome}</a></li>
+                                    <!-- END BLOCK_SUBCATEGORIA_SELECIONADA -->
+                                </ul>
+                                <!-- END BLOCK_CATEGORIAS_SELECIONADAS_SUBS -->
+                            </li>
+                            <!-- END BLOCK_CATEGORIAS_SELECIONADAS -->
+
+                            <li class="_menu_istitucional"><a href="{index}sobre" class="" title="Empresa">EMPRESA</a></li>
+                            <li class="_menu_istitucional"><a href="{index}blog" class="" title="Blog">BLOG</a></li>
+                            <li class="_menu_istitucional"><a href="{index}contato" title="Contato" class="{contato_selected}">CONTATO</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
